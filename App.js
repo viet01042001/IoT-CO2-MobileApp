@@ -12,7 +12,7 @@ export default function App() {
 
   const [realtimeData, setRealtimeData] = useState({})
   useEffect(() => {
-    const starCountRef2 = ref(db);
+    const starCountRef2 = ref(db, 'CO2_RealtimeValue');
     onValue(starCountRef2, (snapshot) => {
       setRealtimeData(snapshot.val());
     });
@@ -46,7 +46,7 @@ export default function App() {
       <TouchableOpacity style={styles.box}>
           <Text style={styles.realtimevalue}> Nồng độ CO2 hiện tại:  </Text>
           <Text> </Text>
-          <Text style={[styles.textsize, styles.realtimevalue]}> {realtimeData.CO2_RealtimeValue} </Text>
+          <Text style={[styles.textsize, styles.realtimevalue]}> {realtimeData.realtimeValue} </Text>
       </TouchableOpacity>
 
       {/* <Text>

@@ -7,28 +7,12 @@ export default function Chart(props) {
 
   return(
     <View>
-      <Text> {dt} </Text>
+
       <LineChart
         data={{
           datasets: [
             {
-              data: [
-                Math.random() * 300,
-                Math.random() * 300,
-                Math.random() * 300,
-                Math.random() * 300,
-                Math.random() * 300,
-                Math.random() * 300,
-                Math.random() * 300,
-                Math.random() * 300,
-                Math.random() * 300,
-                Math.random() * 300,
-                Math.random() * 300,
-                Math.random() * 300,
-                Math.random() * 300,
-                Math.random() * 300,
-                Math.random() * 300
-              ]
+              data: dt ? dt : [0, 0, 0, 0]
             }
           ]
         }}
@@ -48,8 +32,8 @@ export default function Chart(props) {
             borderRadius: 16
           },
           propsForDots: {
-            r: "6",
-            strokeWidth: "2",
+            r: "2",
+            strokeWidth: "1",
             stroke: "#ffa726"
           }
         }}
@@ -59,7 +43,11 @@ export default function Chart(props) {
           borderRadius: 15
         }}
       />
-      <Text>Biểu đồ lượng mưa</Text>
+
+      <View style={{alignItems: 'center'}}>
+        <Text >Biểu đồ lượng mưa</Text>
+      </View>
+      
     </View>
   )
 }
