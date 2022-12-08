@@ -2,9 +2,9 @@ import {LineChart} from 'react-native-chart-kit'
 import { View, Text, Dimensions } from 'react-native';
 
 
-export default function Chart(props) {
-  const dt = props.Data
-
+export default function Chart({Data}) {
+  const dt = Data
+  console.log(dt);
   return(
     <View>
 
@@ -12,7 +12,7 @@ export default function Chart(props) {
         data={{
           datasets: [
             {
-              data: dt ? dt : [0, 0, 0, 0]
+              data: dt
             }
           ]
         }}
@@ -43,10 +43,6 @@ export default function Chart(props) {
           borderRadius: 15
         }}
       />
-
-      <View style={{alignItems: 'center'}}>
-        <Text >Biểu đồ lượng mưa</Text>
-      </View>
       
     </View>
   )
