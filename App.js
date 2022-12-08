@@ -40,7 +40,6 @@ export default function App() {
   }, [dataKeys])
 
   useEffect(() => {
-    console.log('useEffect dataArray', dataArray)
     if (dataArray != null)
       setLoading(false);
   }, [dataArray])

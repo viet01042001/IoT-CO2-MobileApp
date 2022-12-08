@@ -4,7 +4,6 @@ import { View, Text, Dimensions } from 'react-native';
 
 export default function Chart({Data}) {
   const dt = Data
-  console.log(dt);
   return(
     <View>
 
