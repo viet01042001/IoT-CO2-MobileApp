@@ -9,6 +9,15 @@ import { db } from './src/firebaseConfig';
 
 export default function App() {
 
+  const [realtimeData, setRealtimeData] = useState({})
+  useEffect(() => {
+    const starCountRef2 = ref(db);
+    onValue(starCountRef2, (snapshot) => {
+      setRealtimeData(snapshot.val());
+    });
+  }, [])
+
+
   const [data, setData] = useState({});
   const [dataKeys, setDataKeys] = useState([]);
   const [dataArray, setDataArray] = useState([]);
@@ -27,22 +36,26 @@ export default function App() {
   useEffect(() => {
     setDataArray(dataKeys.map(key => [data[key]]));
   }, [dataKeys])
+
   
+
   return (
     
     <View style={styles.container}>
         
       <TouchableOpacity style={styles.box}>
-          <Text> Nồng độ CO2 là:  </Text>
+          <Text> Nồng độ CO2 hiện tại:  </Text>
+          <Text> </Text>
+          <Text style={styles.textsize}> {realtimeData.CO2_RealtimeValue} </Text>
       </TouchableOpacity>
 
-      <Text>
+      {/* <Text>
         {dataArray.map((dataArrayI, index) => {        // -> đoạn này in ra cho dễ nhìn thôi
           return <Text key={index}>
             {`${dataArrayI}    `}
           </Text>
         })}
-      </Text>
+      </Text> */}
 
     </View>
   );
@@ -63,5 +76,9 @@ const styles = StyleSheet.create({
     height: 200,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  textsize: {
+    fontSize: 20,
+    fontWeight: 'bold',
   }
 });
