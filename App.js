@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, Dimensions } from 'react-native';
 
 import { useState, useEffect } from 'react';
 
@@ -44,9 +44,9 @@ export default function App() {
     <View style={styles.container}>
         
       <TouchableOpacity style={styles.box}>
-          <Text> Nồng độ CO2 hiện tại:  </Text>
+          <Text style={styles.realtimevalue}> Nồng độ CO2 hiện tại:  </Text>
           <Text> </Text>
-          <Text style={styles.textsize}> {realtimeData.CO2_RealtimeValue} </Text>
+          <Text style={[styles.textsize, styles.realtimevalue]}> {realtimeData.CO2_RealtimeValue} </Text>
       </TouchableOpacity>
 
       {/* <Text>
@@ -72,15 +72,19 @@ const styles = StyleSheet.create({
   },
   box: {
     margin: 2,
-    borderWidth: 0.5,
-    width: 200,
+    width: Dimensions.get('window').width * 0.9,
     padding: 2,
     height: 200,
     alignItems: 'center',
     justifyContent: 'center',
+    borderRadius: 15,
+    backgroundColor: '#009EFF'
   },
   textsize: {
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: 'bold',
+  },
+  realtimevalue: {
+    color: 'white'
   }
 });

@@ -13,27 +13,35 @@ export default function Chart(props) {
           datasets: [
             {
               data: [
-                Math.random() * 100,
-                Math.random() * 100,
-                Math.random() * 100,
-                Math.random() * 100,
-                Math.random() * 100,
-                Math.random() * 100,
-                Math.random() * 100
+                Math.random() * 300,
+                Math.random() * 300,
+                Math.random() * 300,
+                Math.random() * 300,
+                Math.random() * 300,
+                Math.random() * 300,
+                Math.random() * 300,
+                Math.random() * 300,
+                Math.random() * 300,
+                Math.random() * 300,
+                Math.random() * 300,
+                Math.random() * 300,
+                Math.random() * 300,
+                Math.random() * 300,
+                Math.random() * 300
               ]
             }
           ]
         }}
         width={Dimensions.get("window").width * 0.9} // from react-native
         height={220}
-        yAxisLabel="$"
-        yAxisSuffix="k"
+        yAxisLabel=""
+        yAxisSuffix=""
         yAxisInterval={1} // optional, defaults to 1
         chartConfig={{
           backgroundColor: "#e26a00",
           backgroundGradientFrom: "#fb8c00",
           backgroundGradientTo: "#ffa726",
-          decimalPlaces: 2, // optional, defaults to 2dp
+          decimalPlaces: 1, // optional, defaults to 2dp
           color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
           labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
           style: {
@@ -48,7 +56,7 @@ export default function Chart(props) {
         bezier
         style={{
           marginVertical: 8,
-          borderRadius: 16
+          borderRadius: 15
         }}
       />
       <Text>Biểu đồ lượng mưa</Text>
