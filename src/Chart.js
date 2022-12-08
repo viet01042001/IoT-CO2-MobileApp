@@ -17,7 +17,7 @@ export default function Chart(props) {
           ]
         }}
         width={Dimensions.get("window").width * 0.9} // from react-native
-        height={220}
+        height={300}
         yAxisLabel=""
         yAxisSuffix=""
         yAxisInterval={1} // optional, defaults to 1

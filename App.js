@@ -74,14 +74,14 @@ const styles = StyleSheet.create({
     margin: 2,
     width: Dimensions.get('window').width * 0.9,
     padding: 2,
-    height: 200,
+    height: 150,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 15,
     backgroundColor: '#009EFF'
   },
   textsize: {
-    fontSize: 30,
+    fontSize: 35,
     fontWeight: 'bold',
   },
   realtimevalue: {
