@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { ref, onValue } from 'firebase/database';
 import { db } from './src/firebaseConfig';
 
+import Chart from './src/Chart';
 
 export default function App() {
 
@@ -38,7 +39,6 @@ export default function App() {
   }, [dataKeys])
 
   
-
   return (
     
     <View style={styles.container}>
@@ -56,6 +56,8 @@ export default function App() {
           </Text>
         })}
       </Text> */}
+
+      <Chart Data={dataArray}/>
 
     </View>
   );

@@ -24,7 +24,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "io.expo.IoTCO2MobileApp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
