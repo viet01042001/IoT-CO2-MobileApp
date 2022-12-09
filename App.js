@@ -18,8 +18,6 @@ export default function App() {
     });
   }, [])
 
-  const [isLoading, setLoading] = useState(true)
-
   const [data, setData] = useState([]);
   const [dataKeys, setDataKeys] = useState([]);
   const [dataArray, setDataArray] = useState([]);
@@ -38,11 +36,6 @@ export default function App() {
   useEffect(() => {
     setDataArray(dataKeys.map(key => data[key]));
   }, [dataKeys])
-
-  useEffect(() => {
-    if (dataArray != null)
-      setLoading(false);
-  }, [dataArray])
   
   return (
     
@@ -63,7 +56,7 @@ export default function App() {
       </Text> */}
 
 
-      {isLoading === true ? <View><Text>Loading...</Text></View> : <Chart Data={dataArray} />}
+      <Chart Data={dataArray} />
 
     </View>
   );
