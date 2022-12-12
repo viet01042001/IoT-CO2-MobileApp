@@ -18,6 +18,12 @@ export default function App() {
     });
   }, [])
 
+  const [valueColor, setValueColor] = useState('#009EFF')
+  useEffect(() => {
+    const color = (realtimeData.realtimeValue >= 400) ? 'red' : '#009EFF';
+    setValueColor(color);
+  }, [realtimeData])
+
   const [data, setData] = useState([]);
   const [dataKeys, setDataKeys] = useState([]);
   const [dataArray, setDataArray] = useState([]);
@@ -41,22 +47,16 @@ export default function App() {
     
     <View style={styles.container}>
         
-      <TouchableOpacity style={styles.box}>
-          <Text style={styles.realtimevalue}> Nồng độ CO2 hiện tại:  </Text>
-          <Text> </Text>
-          <Text style={[styles.textsize, styles.realtimevalue]}> {realtimeData.realtimeValue} </Text>
+      <TouchableOpacity style={[styles.box, {backgroundColor: valueColor}]}>
+          <Text style={styles.realtimevalue}> Nồng độ CO2 hiện tại: </Text>
+          <Text style={{color: 'yellow'}}> {valueColor === 'red' ? '!! Alert !!' : ''} </Text>
+          <Text style={[styles.textsize, styles.realtimevalue]}>{realtimeData.realtimeValue}</Text>
       </TouchableOpacity>
 
-      {/* <Text>
-        {dataArray.map((dataArrayI, index) => {        // -> đoạn này in ra cho dễ nhìn thôi
-          return <Text key={index}>
-            {`${dataArrayI}    `}
-          </Text>
-        })}
-      </Text> */}
-
-
       <Chart Data={dataArray} />
+
+      <Text> Dự báo </Text>
+      <Text> ... </Text>
 
     </View>
   );
@@ -77,7 +77,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 15,
-    backgroundColor: '#009EFF'
   },
   textsize: {
     fontSize: 35,
