@@ -50,7 +50,7 @@ export default function App() {
       <TouchableOpacity style={[styles.box, {backgroundColor: valueColor}]}>
           <Text style={styles.realtimevalue}> Nồng độ CO2 hiện tại: </Text>
           <Text style={{color: 'yellow'}}> {valueColor === 'red' ? '!! Alert !!' : ''} </Text>
-          <Text style={[styles.textsize, styles.realtimevalue]}>{realtimeData.realtimeValue}</Text>
+          <Text style={[styles.textsize, styles.realtimevalue]}>{Math.round(realtimeData.realtimeValue)}</Text>
       </TouchableOpacity>
 
       <Chart Data={dataArray} />
