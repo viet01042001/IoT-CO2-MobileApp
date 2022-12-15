@@ -55,9 +55,6 @@ export default function App() {
 
       <Chart Data={dataArray} />
 
-      <Text> Dự báo </Text>
-      <Text> ... </Text>
-
     </View>
   );
 }
